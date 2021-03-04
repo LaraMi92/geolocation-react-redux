@@ -3,10 +3,15 @@ export const SEND_LOCATION = 'SEND_LOCATION';
 export const SET_COORDINATE = 'SET_COORDINATE';
 export const SET_ERROR = 'SET_ERROR';
 export const UPDATE_MAP = 'UPDATE_MAP';
+export const SEARCH_FORMER_COORDINATE = 'SEARCH_FORMER_COORDINATE';
+export const SET_DIRECTIONS = 'SET_DIRECTIONS';
+export const SEND_DIRECTIONS = 'SEND_DIRECTIONS';
+export const SHOW_DIRECTIONS = 'SHOW_DIRECTIONS';
+export const SHOW_COOR_DIR = 'SHOW_COOR_DIR';
 
-export const updateForm = (value) => ({
+export const updateForm = (location) => ({
   type: UPDATE_LOCATION,
-  location: value,
+  location,
 });
 
 export const sendForm = () => ({
@@ -23,6 +28,26 @@ export const setError = (error) => ({
   error,
 });
 
-export const updateMap = () => ({
-  type: UPDATE_MAP,
+export const renderMap = (locationName) => ({
+  type: SEARCH_FORMER_COORDINATE,
+  locationName,
+});
+
+export const updateDirections = (name, value) => ({
+  type: SET_DIRECTIONS,
+  payload: { name, value },
+});
+
+export const sendDirections = () => ({
+  type: SEND_DIRECTIONS,
+});
+
+/* export const showDirections = (directions) => ({
+  type: SHOW_DIRECTIONS,
+  directions,
+});
+ */
+export const showCoorDir = (coordinates) => ({
+  type: SHOW_COOR_DIR,
+  directions: coordinates,
 });
