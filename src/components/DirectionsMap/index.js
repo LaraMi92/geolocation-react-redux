@@ -2,15 +2,12 @@
 import React, { useEffect } from 'react';
 import PropTypes, { number } from 'prop-types';
 import mapboxgl from 'mapbox-gl';
-
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 // == Import
-import './styles.scss';
-import Form from 'src/containers/Form';
-import Dashboard from 'src/containers/Dashboard';
-import GetDirections from 'src/containers/GetDirections';
+import './directions-map.scss';
 
 // == Composant
-const App = ({ error, coordinate }) => {
+const DirectionsMap = ({ directions, coordinate }) => {
   const apiKey = 'pk.eyJ1IjoibGFyYW1pbnNraSIsImEiOiJja2xxY2R1cm4wd2FzMnBrYXRsbGF1bW5yIn0.IcsZpJa8jgkL7R2n3qNLpA';
 
   const style = 'cklqcgjkk3osr17t6u3q4yhif';
@@ -25,26 +22,23 @@ const App = ({ error, coordinate }) => {
       zoom: 8,
     });
 
-    const marker = new mapboxgl.Marker({
-      color: '#48D1CC',
-    }).setLngLat(coordinate)
-      .addTo(map);
-  }, [coordinate]);
+    map.addControl(
+      new MapboxDirections({
+        accessToken: apiKey,
+      }),
+    );
+  }, [directions]);
 
   return (
     <>
       <div id="map" />
-      {error !== '' && (error)}
-      <Form />
-      <Dashboard />
     </>
-
   );
 };
 
-App.propTypes = {
+DirectionsMap.propTypes = {
   coordinate: PropTypes.arrayOf(number).isRequired,
 };
 
 // == Export
-export default App;
+export default DirectionsMap;

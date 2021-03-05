@@ -60,7 +60,7 @@ function reducer(oldState = initialState, action) {
     case SHOW_COOR_DIR: {
       return {
         ...oldState,
-        directions: [...action.directions],
+        directions: [...oldState.directions, action.directions],
       };
     }
     default:

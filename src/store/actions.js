@@ -8,6 +8,7 @@ export const SET_DIRECTIONS = 'SET_DIRECTIONS';
 export const SEND_DIRECTIONS = 'SEND_DIRECTIONS';
 export const SHOW_DIRECTIONS = 'SHOW_DIRECTIONS';
 export const SHOW_COOR_DIR = 'SHOW_COOR_DIR';
+export const GET_DIRECTIONS = 'GET_DIRECTIONS';
 
 export const updateForm = (location) => ({
   type: UPDATE_LOCATION,
@@ -50,4 +51,8 @@ export const sendDirections = () => ({
 export const showCoorDir = (coordinates) => ({
   type: SHOW_COOR_DIR,
   directions: coordinates,
+});
+
+export const sendCoorDir = () => ({
+  type: GET_DIRECTIONS,
 });
