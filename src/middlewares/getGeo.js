@@ -16,18 +16,18 @@ const getGeo = (store) => (next) => (action) => {
   }
   next(action);
 
-  if (action.type === SEND_DIRECTIONS) {
+  /*  if (action.type === SEND_DIRECTIONS) {
     const { start, end } = store.getState();
     axios.get(`https://api.mapbox.com/geocoding/v5/${endPoint}/${start}.json?access_token=${apiKey}`)
       .then((result) => store.dispatch(showCoorDir(result.data.features[0].center)))
       .catch((error) => setError(error));
-    /* .finally(() => store.dispatch(sendCoorDir())); */
+
     axios.get(`https://api.mapbox.com/geocoding/v5/${endPoint}/${end}.json?access_token=${apiKey}`)
       .then((result) => store.dispatch(showCoorDir(result.data.features[0].center)))
       .catch((error) => setError(error))
       .finally(() => store.dispatch(sendCoorDir()));
   }
-  next(action);
+  next(action); */
 };
 
 export default getGeo;

@@ -9,6 +9,8 @@ export const SEND_DIRECTIONS = 'SEND_DIRECTIONS';
 export const SHOW_DIRECTIONS = 'SHOW_DIRECTIONS';
 export const SHOW_COOR_DIR = 'SHOW_COOR_DIR';
 export const GET_DIRECTIONS = 'GET_DIRECTIONS';
+export const SET_POP_UP = 'SET_POP_UP';
+export const SUBMIT_POP_UP = 'SUBMIT_POP_UP';
 
 export const updateForm = (location) => ({
   type: UPDATE_LOCATION,
@@ -55,4 +57,13 @@ export const showCoorDir = (coordinates) => ({
 
 export const sendCoorDir = () => ({
   type: GET_DIRECTIONS,
+});
+
+export const showPopUp = (popUp) => ({
+  type: SET_POP_UP,
+  popUp,
+});
+
+export const submitPop = () => ({
+  type: SUBMIT_POP_UP,
 });

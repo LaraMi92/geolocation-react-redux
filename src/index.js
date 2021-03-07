@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 // == Import : local
 // Composants
 import App from 'src/containers/App';
-import DirectionsMap from 'src/containers/DirectionsMap';
 import store from 'src/store';
 
 // == Render
@@ -14,8 +13,7 @@ import store from 'src/store';
 //    => crée une structure d'objets imbriqués (DOM virtuel)
 const rootReactElement = (
   <Provider store={store}>
-    {/* <App /> */}
-    <DirectionsMap />
+    <App />
   </Provider>
 );
 // 2. La cible du DOM (là où la structure doit prendre vie dans le DOM)

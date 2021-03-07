@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import getGeo from 'src/middlewares/getGeo';
-import getDirections from 'src/middlewares/getDirections';
+/* import getDirections from 'src/middlewares/getDirections'; */
 
 // reducer
 import reducer from './reducer';
@@ -15,7 +15,7 @@ const store = createStore(
   reducer,
   composeWithDevTools(
     applyMiddleware(getGeo),
-    applyMiddleware(getDirections),
+    /* applyMiddleware(getDirections), */
   ),
 );
 
