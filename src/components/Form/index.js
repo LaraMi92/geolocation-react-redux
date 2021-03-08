@@ -2,6 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+//= = Import styles
+import './form.scss';
+
 // == Composant
 const Form = ({ handleChange, submitForm, formValue }) => (
   <div className="form">
@@ -10,7 +13,9 @@ const Form = ({ handleChange, submitForm, formValue }) => (
       submitForm();
     }}
     >
+
       <input
+        className="form--input"
         type="text"
         value={formValue}
         onChange={(event) => handleChange(event.target.value)}

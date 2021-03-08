@@ -40,9 +40,9 @@ const App = ({
 
   return (
     <>
-      <div id="map" />
-      {error !== '' && (error)}
       <Form />
+      {error !== '' && (error)}
+      <div id="map" />
       <Dashboard />
     </>
 

@@ -1,11 +1,24 @@
+@use 'src/styles/vars';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap');
 
+
 .dashboard {
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   width: 20%;
-  height: 100vh;
-  background-color:#48D1CC;
+  height: 100%;
+  background-color: vars.$main-color;
   font-family: 'Josefin Slab', serif;
+  &--state {
+    padding: 2rem;
+  }
+  &--location{
+    padding: 1rem;
+    box-shadow: 3px 2px 26px -6px rgba(13,76,147,0.84) inset;
+    margin: 1rem;
+    & > button {
+      border: none;
+    }
+  }
 }

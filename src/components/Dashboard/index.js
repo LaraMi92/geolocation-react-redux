@@ -9,7 +9,10 @@ const Dashboard = ({
   locations, submitAgain, submitPopUp, handleChange, popUpText, showPopUp, allPopUps,
 }) => (
   <div className="dashboard">
-    {locations.length === 0 ? ('You have no searches yet') : ('Here are your recent searches')}
+    <div className="dashboard--state">
+      {locations.length === 0 ? ('You have no searches yet') : ('Here are your recent searches')}
+      <hr />
+    </div>
     {locations.map((location, index) => (
       <div key={index} className="dashboard--location">{location}
         <form onSubmit={(event) => {
