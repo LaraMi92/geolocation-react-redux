@@ -64,6 +64,7 @@ export const showPopUp = (popUp) => ({
   popUp,
 });
 
-export const submitPop = () => ({
+export const submitPop = (location) => ({
   type: SUBMIT_POP_UP,
+  location,
 });

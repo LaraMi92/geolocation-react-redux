@@ -10,7 +10,7 @@ import Dashboard from 'src/containers/Dashboard';
 
 // == Composant
 const App = ({
-  error, coordinate, showPopUp,
+  error, coordinate, showPopUp, submitPop,
 }) => {
   const apiKey = 'pk.eyJ1IjoibGFyYW1pbnNraSIsImEiOiJja2xxY2R1cm4wd2FzMnBrYXRsbGF1bW5yIn0.IcsZpJa8jgkL7R2n3qNLpA';
 
@@ -26,17 +26,17 @@ const App = ({
       zoom: 8,
     });
 
-    const popUp = new mapboxgl.Popup({ offset: 25 })
+    /* const popUp = new mapboxgl.Popup({ offset: 25 })
       .setText(
         showPopUp,
-      );
+      ); */
 
     const marker = new mapboxgl.Marker({
       color: '#48D1CC',
     }).setLngLat(coordinate)
-      .addTo(map)
-      .setPopup(popUp);
-  }, [coordinate, showPopUp]);
+      .addTo(map);
+      /* .setPopup(popUp); */
+  }, [coordinate]);
 
   return (
     <>

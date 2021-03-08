@@ -11,8 +11,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  submitPopUp: () => {
-    dispatch(submitPop());
-  },
+
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);

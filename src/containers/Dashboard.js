@@ -7,6 +7,8 @@ import { renderMap, showPopUp, submitPop } from 'src/store/actions';
 const mapStateToProps = (state) => ({
   locations: state.locations,
   popUpText: state.popUpText,
+  showPopUp: state.showPopUp,
+  allPopUps: state.allPopUps,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -16,8 +18,8 @@ const mapDispatchToProps = (dispatch) => ({
   handleChange: (popup) => {
     dispatch(showPopUp(popup));
   },
-  submitPopUp: () => {
-    dispatch(submitPop());
+  submitPopUp: (location) => {
+    dispatch(submitPop(location));
   },
 });
 

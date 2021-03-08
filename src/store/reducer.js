@@ -1,5 +1,5 @@
 import {
-  UPDATE_LOCATION, SEND_LOCATION, SET_COORDINATE, SET_ERROR, SEARCH_FORMER_COORDINATE, SET_DIRECTIONS, SHOW_COOR_DIR, SET_POP_UP, SUBMIT_POP_UP,
+  UPDATE_LOCATION, SEND_LOCATION, SET_COORDINATE, SET_ERROR, SEARCH_FORMER_COORDINATE, SET_DIRECTIONS, SHOW_COOR_DIR, SET_POP_UP, SUBMIT_POP_UP, showPopUp,
 } from './actions';
 
 const initialState = {
@@ -13,6 +13,7 @@ const initialState = {
   directions: [],
   popUpText: '',
   showPopUp: '',
+  allPopUps: [],
 };
 
 function reducer(oldState = initialState, action) {
@@ -69,12 +70,15 @@ function reducer(oldState = initialState, action) {
       return {
         ...oldState,
         popUpText: action.popUp,
+
       };
     }
     case SUBMIT_POP_UP: {
       return {
         ...oldState,
+        /* showPopUp: oldState.allPopUps[oldState.allPopUps.length - 1], */
         showPopUp: oldState.popUpText,
+        allPopUps: [...oldState.allPopUps, oldState.popUpText],
         popUpText: '',
       };
     }

@@ -6,10 +6,10 @@ import './dashboard.scss';
 
 // == Composant
 const Dashboard = ({
-  locations, submitAgain, submitPopUp, handleChange, popUpText,
+  locations, submitAgain, submitPopUp, handleChange, popUpText, showPopUp, allPopUps,
 }) => (
   <div className="dashboard">
-    Here are your recent searches
+    {locations.length === 0 ? ('You have no searches yet') : ('Here are your recent searches')}
     {locations.map((location, index) => (
       <div key={index} className="dashboard--location">{location}
         <form onSubmit={(event) => {
@@ -19,9 +19,10 @@ const Dashboard = ({
         >
           <button type="submit">search again</button>
         </form>
+        {allPopUps[index] === undefined && (
         <form onSubmit={(event) => {
           event.preventDefault();
-          submitPopUp();
+          submitPopUp(location);
         }}
         >
           <input
@@ -32,6 +33,9 @@ const Dashboard = ({
             }}
           />
         </form>
+        )}
+
+        {allPopUps[index] !== '' && (<div>{allPopUps[index]}</div>)}
       </div>
     ))}
   </div>
