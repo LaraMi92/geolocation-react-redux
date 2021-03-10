@@ -21,6 +21,9 @@ const Form = ({ handleChange, submitForm, formValue }) => (
         onChange={(event) => handleChange(event.target.value)}
         placeholder="please enter a location"
       />
+      <div className="form--input-button">
+        <i className="fas fa-map-marker-alt fa-2x" onClick={submitForm} />
+      </div>
     </form>
   </div>
 );

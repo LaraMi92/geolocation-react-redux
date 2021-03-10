@@ -9,7 +9,21 @@
     margin: auto;
     padding: 1rem;
     display: block;
-    box-shadow: 1px -3px 46px 3px rgba(13,76,147,0.75) inset;
+    box-shadow: -1px 15px 35px 0px rgba(72,209,204,0.75) inset;
     border: none;
+    &-button{
+      width: 100%;
+      text-align: center;
+    }
+  }
+  & .fas,.fa-map-marker-alt {
+    color: vars.$alt-color;
+    display: inline-block;
+    padding: .5rem;
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
+
+

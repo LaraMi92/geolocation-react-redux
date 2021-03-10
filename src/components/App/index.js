@@ -39,12 +39,12 @@ const App = ({
   }, [coordinate]);
 
   return (
-    <>
+    <div className="app">
       <Form />
       {error !== '' && (error)}
       <div id="map" />
       <Dashboard />
-    </>
+    </div>
 
   );
 };

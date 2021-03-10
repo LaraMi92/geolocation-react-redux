@@ -20,7 +20,7 @@ const Dashboard = ({
           submitAgain(location);
         }}
         >
-          <button type="submit">search again</button>
+          <button type="submit" className="dashboard--location-button">search again</button>
         </form>
         {allPopUps[index] === undefined && (
         <form onSubmit={(event) => {
@@ -28,13 +28,18 @@ const Dashboard = ({
           submitPopUp(location);
         }}
         >
-          <input
+          <textarea
+            className="dashboard--input"
             type="text"
             value={popUpText}
+            placeholder="Tell me more about this place"
             onChange={(event) => {
               handleChange(event.target.value);
             }}
           />
+          <div className="dashboard--input-button">
+            <i className="fas fa-map-marker-alt fa-sm" onClick={submitPopUp} />
+          </div>
         </form>
         )}
 

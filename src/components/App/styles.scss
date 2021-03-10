@@ -1,6 +1,11 @@
 @use 'src/styles/vars';
 
+.app{
+  width: 100vw;
+  height: 100vh;
+}
+
 #map {
-  width: 80%;
+  width: 80vw;
   height: 100vh;
 }
